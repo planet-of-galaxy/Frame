@@ -1,20 +1,19 @@
-using System;
-using UnityEngine;
+ï»¿using System;
 
 /// <summary>
-/// ²»¼Ì³ĞMonoBehaviourµÄµ¥ÀıÀà
-/// ¼Ì³Ğ¸Ãµ¥ÀıÀàµÄÀà¿ÉÒÔÔÚÆä¹¹Ôìº¯ÊıÖĞ½øĞĞ³õÊ¼»¯
+/// ä¸ç»§æ‰¿MonoBehaviourçš„å•ä¾‹ç±»
+/// ç»§æ‰¿è¯¥å•ä¾‹ç±»çš„ç±»å¯ä»¥åœ¨å…¶æ„é€ å‡½æ•°ä¸­è¿›è¡Œåˆå§‹åŒ–
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public abstract class Singleton<T> : IResetable where T : Singleton<T>
 {
     private static T _instance;
-    // ÉùÃ÷Ëø¶ÔÏó
+    // å£°æ˜é”å¯¹è±¡
     protected readonly static object lockObj = new object();
     public static T Instance {
         get
         {
-            // Ë«ÖØËøÅĞ¶Ï ·ÀÖ¹¶àÏß³Ì·ÃÎÊÉú³É¶à¸öÊµÀı
+            // åŒé‡é”åˆ¤æ–­ é˜²æ­¢å¤šçº¿ç¨‹è®¿é—®ç”Ÿæˆå¤šä¸ªå®ä¾‹
             if (_instance == null)
             {
                 lock (lockObj) {
@@ -25,9 +24,9 @@ public abstract class Singleton<T> : IResetable where T : Singleton<T>
             return _instance;
         }
     }
-    // ¸ÃÊôĞÔÓÃÓÚÅĞ¶Ïµ¥ÀıÀàÊÇ·ñÒÑ¾­ÊµÀı»¯
+    // è¯¥å±æ€§ç”¨äºåˆ¤æ–­å•ä¾‹ç±»æ˜¯å¦å·²ç»å®ä¾‹åŒ–
     public static bool isInstantiated { get => _instance != null; }
     protected Singleton() {}
-    // ¸Ã½Ó¿ÚÓÃÓÚÖØÖÃµ¥ÀıÀà ¹ı³¡¾°Ê±»áµ÷ÓÃ
+    // è¯¥æ¥å£ç”¨äºé‡ç½®å•ä¾‹ç±» è¿‡åœºæ™¯æ—¶ä¼šè°ƒç”¨
     public abstract void Reset();
 }

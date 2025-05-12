@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// °Ñ²âÊÔÕß¹ÒÔØµ½³¡¾°ÖĞ µ÷ÓÃÊ¹ÓÃÕßµÄTest·½·¨ ¹Û²ìÓĞÃ»ÓĞÖ´ĞĞÊ¹ÓÃÕßµÄ¹¹Ôìº¯Êı
-// Èç¹ûÓĞLogÊä³ö£¬ËµÃ÷µ¥ÀıÀàµÄ¹¹Ôìº¯Êı±»µ÷ÓÃÁË
+// æŠŠæµ‹è¯•è€…æŒ‚è½½åˆ°åœºæ™¯ä¸­ è°ƒç”¨ä½¿ç”¨è€…çš„Testæ–¹æ³• è§‚å¯Ÿæœ‰æ²¡æœ‰æ‰§è¡Œä½¿ç”¨è€…çš„æ„é€ å‡½æ•°
+// å¦‚æœæœ‰Logè¾“å‡ºï¼Œè¯´æ˜å•ä¾‹ç±»çš„æ„é€ å‡½æ•°è¢«è°ƒç”¨äº†
 public class SingletonTester : MonoBehaviour
 {
     // Start is called before the first frame update

@@ -1,9 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SingletonUser : Singleton<SingletonUser>
 {
-    // Remove the public constructor to avoid the access issue.  
-    // Singleton pattern typically uses a protected or private constructor.  
+    // 当需要进行初始化时 在构造函数中进行初始化并调用base
     protected SingletonUser() : base()
     {
         Debug.Log("Child Constructor");

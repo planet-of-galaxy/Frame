@@ -2,7 +2,7 @@
 
 /// <summary>
 /// 不继承MonoBehaviour的单例类
-/// 子类可以在Awake中进行初始化
+/// 子类可以在Awake中进行初始化 并调用base
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public abstract class SingletonMono<T> : MonoBehaviour, IResetable where T : SingletonMono<T>
