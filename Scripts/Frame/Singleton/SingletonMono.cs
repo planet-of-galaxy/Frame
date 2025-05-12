@@ -5,7 +5,7 @@
 /// 子类可以在Awake中进行初始化 并调用base
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public abstract class SingletonMono<T> : MonoBehaviour, IResetable where T : SingletonMono<T>
+public abstract class SingletonMono<T> : MonoBehaviour, IResetable,IDestroyable where T : SingletonMono<T>
 {
     private static T _instance;
 
@@ -53,4 +53,9 @@ public abstract class SingletonMono<T> : MonoBehaviour, IResetable where T : Sin
     }
     // 该接口用于重置单例类 过场景时会调用
     public abstract void Reset();
+    // 该接口用于释放单例类
+    public virtual void Destroy()
+    {
+        _instance = null;
+    }
 }
