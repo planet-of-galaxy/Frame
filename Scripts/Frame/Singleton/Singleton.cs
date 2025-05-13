@@ -5,7 +5,7 @@
 /// 继承该单例类的类可以在其构造函数中进行初始化
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public abstract class Singleton<T> : IResetable,IDestroyable where T : Singleton<T>
+public abstract class Singleton<T> : IResetable where T : Singleton<T>
 {
     private static T _instance;
     // 声明锁对象
@@ -25,13 +25,8 @@ public abstract class Singleton<T> : IResetable,IDestroyable where T : Singleton
         }
     }
     // 该属性用于判断单例类是否已经实例化
-    public static bool isInstantiated { get => _instance != null; }
+    public static bool IsInstantiated { get => _instance != null; }
     protected Singleton() {}
     // 该接口用于重置单例类 过场景时会调用
     public abstract void Reset();
-    // 该接口用于释放单例类
-    public virtual void Destroy()
-    {
-        _instance = null;
-    }
 }
